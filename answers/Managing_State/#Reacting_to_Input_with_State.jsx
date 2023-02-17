@@ -1,5 +1,33 @@
 // Reacting to Input with State
-// 14.1
+// 14.1 (no #)
+import {useState} from 'react'
+export default function Picture() {
+  
+const [checkq, setCheckq] = useState(false)
+const backgroundNone = "background"
+const backgroundPurple = "background--active"
+  
+  const handleChange = () => {
+    setCheckq(!checkq)
+  }
+  
+  return (
+    <div className= 
+      {"background" + checkq ? backgroundPurple : "null"} 
+      onClick={handleChange}>
+      <img
+        onClick={(e) => {
+          e.stopPropagation();
+          handleChange()
+        }}
+        className="picture"
+        alt="Rainbow houses in Kampung Pelangi, Indonesia"
+        src="https://i.imgur.com/5qwVYb1.jpeg"
+      />
+    </div>
+    
+  );
+}
 
 
 
