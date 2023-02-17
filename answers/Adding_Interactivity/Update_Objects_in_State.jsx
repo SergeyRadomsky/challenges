@@ -59,11 +59,13 @@ export default function Scoreboard() {
 
 // 12.2
 function handleMove(dx, dy) {
-  setShape({...shape,
+  setShape(
+    {...shape,
     position: {
     ...initialPosition,
-  x: shape.position.x + dx,
-  y: shape.position.y + dy,
+      x: shape.position.x + dx,
+      y: shape.position.y + dy,
     }
-  })
+    }
+  )
 }
